@@ -1,3 +1,4 @@
+// Componente básico 
 export function HelloWorld() {
 
     return(
