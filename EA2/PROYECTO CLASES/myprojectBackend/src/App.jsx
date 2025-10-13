@@ -1,23 +1,27 @@
-import { Routes, Route } from 'react-router-dom'
-import Navbar from './componentes/Navbar/Navbar'
-import Home from './pages/Home/Home'
-import Contacto from './pages/Contacto/Contacto'
-import Inventario from './pages/Inventario/Inventario'
-import CrearProd from './componentes/CrearProd/CrearProd'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home/Home';
+import { Contacto } from './pages/Contacto/Contacto';
+import { Inventario } from './pages/Inventario/inventario';
+import { CrearProd } from './componentes/CrearProd/CrearProd';
+import { EditarProd } from './componentes/EditarProd/EditarProd';
+import './App.css'  
+import { Productos } from './componentes/Productos/Productos';
 
-export default function App() {
+function App() {
+  
+
   return (
-    <>
-      <Navbar />
-      <div className="container py-4">
-        <Routes>
+    <Router>
+      <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/inventario" element={<Inventario />} />
-          <Route path="/crear-producto" element={<CrearProd />} />
-        </Routes>
-      </div>
-    </>
+          <Route path="/productos" element={<Productos />} />
+          <Route path="/crear-producto" element={<CrearProd />} /> 
+          <Route path="/editar-producto/:id" element={<EditarProd />} />
+       </Routes>
+    </Router>
   )
 }
+
+export default App
